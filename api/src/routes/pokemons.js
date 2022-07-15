@@ -71,16 +71,13 @@ router.get("/:id", async (req,res,next)=> {
 router.post ("/", async (req,res,next)=> {
 
 try{
-    const datoOblig=({Infomacion : "El nombre es Obligatorio Por favor"});
-    const pokemonCreadoExito = "Ah terminado de crear su nuevo Pokemon";
-    //const errorData = "Tiene un error en data";
+    const { name , image , hp , attack , defense , speed , height , weight , type } = req.body 
+    const pokemonCreado = await Pokemon.create({ name , image , hp , attack , defense , speed , height , weight});
 
-    let { name , img , hp , str , def , agi , height , weight , type} = req.body 
-
-    const pokemonCreado = await Pokemon.create({ name , img , hp , str , def , agi , height , weight});
-
-    if (!name) return res.json(datoOblig);
-
+    //console.log(pokemonCreado);
+    //const datoOblig=({Infomacion : "El nombre es Obligatorio Por favor"});
+    //const pokemonCreadoExito = "Ah terminado de crear su nuevo Pokemon";
+    if (!name) return res.json({Infomacion : "El nombre es Obligatorio Por favor"});
 //consulto si loque tengo en type es un arreglo y verifico si tine algo adentro
     if (Array.isArray(type) && type.length){
         
@@ -91,10 +88,11 @@ try{
             })
         )
         await pokemonCreado.setTypes(agregaType)
-        return res.send(pokemonCreadoExito);
+        return res.send("Ah terminado de crear su nuevo Pokemon");
     }
 } catch (err){
-    res.status(400).send("Tiene un error en data");
+    const errorData = "Tiene un error en data";
+    res.status(400).send(errorData);
 }
 });
 

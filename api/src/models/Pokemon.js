@@ -8,16 +8,15 @@ let pokemon = sequelize.define('pokemon', {
     type:DataTypes.UUID,
     allowNull: false,
     primaryKey: true,
-    validate:{
-      isUUID: 4
-    }
-  },
+    defaultValue: DataTypes.UUIDV4,
+    },
+  
   name: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
   },
-  img:{
+  image:{
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
@@ -29,21 +28,21 @@ let pokemon = sequelize.define('pokemon', {
       min: 0
     }
   },
-  str:{
+  attack:{
     type:DataTypes.INTEGER,
     allowNull: false,
     validate:{
       min: 0
     }
   },
-  def:{
+  defense:{
     type:DataTypes.INTEGER,
     allowNull: false,
     validate:{
       min: 0
     }
   },
-  agi:{
+  speed:{
     type:DataTypes.INTEGER,
     allowNull: false,
     validate:{
@@ -62,7 +61,10 @@ let pokemon = sequelize.define('pokemon', {
       allowNull: false,
     },
   
-});
+},{
+  timestamps:false,
+}
+);
 return pokemon;
 };
 
