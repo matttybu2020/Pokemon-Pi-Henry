@@ -9,7 +9,7 @@ export class Landing extends Component {
       <div className={style.nada}>
         <div className={style.titleContainer}>
           
-          <Link to="/home"><img className={style.logo} src={logo} alt="" /></Link>
+          <Link to="/Pokemons"><img className={style.logo} src={logo} alt="" /></Link>
         </div>
 
         <br />

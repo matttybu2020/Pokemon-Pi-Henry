@@ -20,13 +20,13 @@ function PokemonDetail(props) {
 let detalles = useSelector ((state) => state.detalles);
 console.log(detalles) 
 return(
-    <div className={style.contenedor}>
+    <div className="contenedor">
         <div className={style.volver}>
-            <Link to="/home" className={style.carta}> Volver </Link> </div>
+            <Link to="/Pokemons" className={style.carta}> Volver </Link> </div>
             <div>
                 { detalles.length ? (
                      detalles.map((p) => (
-                     <Link to= {`/home/${p.id}`}>
+                     <Link to= {`/Pokemons/${p.id}`}>
 
                     <div>
                         <h1 className={style.name} >{p.name.toUpperCase()} </h1>

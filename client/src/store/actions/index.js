@@ -2,8 +2,8 @@ import axios from "axios";
 
 export function postPokemon(payload) {
   return async function () {
-    const responde = await axios.post("http://localhost:3001/pokemons", payload);
-    return responde;
+    const response = await axios.post("http://localhost:3001/pokemons", payload);
+    return response;
   };
 }
 
@@ -36,10 +36,10 @@ export function filtrarPokemonAtaque(payload) {
 }
 export default function getPokemons() {
   return async function (dispatch) {
-    var json = await axios.get(`http://localhost:3001/pokemons`);
+    var json = await axios.get("http://localhost:3001/pokemons");
     console.log(json.data);
     dispatch({
-      type: "OBTENER_POKEMONS",
+      type: "GET_POKEMONS",
       payload: json.data,
     });
   };
@@ -79,5 +79,6 @@ export function Sort(order) {
 export function filtroCrear(payload) {
   return {
     tpe: "FILTER_CREATED",
+    payload
   };
 }

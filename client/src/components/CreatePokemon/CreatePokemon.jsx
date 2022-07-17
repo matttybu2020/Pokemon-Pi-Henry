@@ -13,12 +13,6 @@ function validar(pokemon){
   }return error;
 }
 
-
-
-
-
-
-
 function CreatePokemon() {
 
 const dispatch = useDispatch();
@@ -41,7 +35,7 @@ const [pokemon , setpokemon] = useState ({
 
 useEffect(()=>{
   dispatch(getType());
-}, []);
+}, [dispatch]);
 
 function handleSelect(e){
   setpokemon({
@@ -82,7 +76,7 @@ function onSubmit(e){
     height: 0,
     weight: 0,
   });
-  history.push("/home");
+  history.push("/Pokemons");
 }
 
 
@@ -174,7 +168,7 @@ function onSubmit(e){
         value={pokemon.weight}
         className="input"
       />{" "}
-    
+    normal
     
       {" "}
       <p className="types-s">
@@ -187,7 +181,7 @@ function onSubmit(e){
         <li>{pokemon.types.map((e) => e + " , ")}</li>
       </ul>
       </p>
-      <Link to="/home">
+      <Link to="/Pokemons">
     <button type="submit" className={style.atras}>Atrás</button></Link>
     <button type="submit" className={style.bottom}>Crear</button>
   </form>

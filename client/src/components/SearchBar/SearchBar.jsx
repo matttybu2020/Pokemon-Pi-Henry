@@ -1,13 +1,14 @@
+import React from "react";
 import { usestate} from "react";
-import {useDispach} from "react-redux";
-import { searchPokemon } from "./"
+import { useDispatch } from "react-redux";
+import { buscarPokemon } from "../../store/actions/index"
 import style from "../Style/SearchBar.module.css"
 
 
 function SearchBar(){
 
-    const dispatch = useDispach();
-    const [name, setName] = usestate("")
+    const dispatch = useDispatch();
+    const [name, setName] = usestate("");
 
 
     const handleInputchange = (e) =>{ e.prevenDefault();
@@ -15,7 +16,7 @@ function SearchBar(){
 
     }
     const handleSubmit = (e) => { e.prevenDefault();
-        dispatch(searchPokemon(name))
+        dispatch(buscarPokemon(name))
     }
 
     return(
