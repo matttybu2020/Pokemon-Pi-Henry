@@ -1,27 +1,22 @@
-.title{
-    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+.logo {
+    height:200px;
+  /* From https://css.glass */
+background: rgba(233, 239, 244, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+position: relative;
+    display: inline-block;
+    margin: 20%;
+    padding: 15px 30px;
+   }.img {
+    width: auto; 
+    max-height: 100%; 
     position: relative;
     display: inline-block;
     margin: 20%;
     padding: 15px 30px;
-    background-color: #100e11;
-    color:ivory;
-    letter-spacing: 4px;
-    font-size: 24px;
-    text-decoration: none;
-    overflow: hidden;
-    transition: 1s;
-    border: none;
-    background: -moz-linear-gradient(left,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 6%, rgba(30,87,153,1) 22%, rgba(30,87,153,1) 46%, rgba(17,32,86,1) 73%, rgba(41,137,216,1) 87%, rgba(41,137,216,1) 90%, rgba(41,137,216,0.8) 94%, rgba(41,137,216,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 6%,rgba(30,87,153,1) 22%,rgba(30,87,153,1) 46%,rgba(17,32,86,1) 73%,rgba(41,137,216,1) 87%,rgba(41,137,216,1) 90%,rgba(41,137,216,0.8) 94%,rgba(41,137,216,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 6%,rgba(30,87,153,1) 22%,rgba(30,87,153,1) 46%,rgba(17,32,86,1) 73%,rgba(41,137,216,1) 87%,rgba(41,137,216,1) 90%,rgba(41,137,216,0.8) 94%,rgba(41,137,216,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#002989d8',GradientType=1 ); /* IE6-9 */
-    /* From https://css.glass */
-background: rgba(9, 8, 48, 0.43);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(7.8px);
--webkit-backdrop-filter: blur(7.8px);
-border: 1px solid rgba(9, 8, 48, 0.27);
-}
-
+   }
