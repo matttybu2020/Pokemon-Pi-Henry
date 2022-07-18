@@ -9,7 +9,7 @@ function Paginado({ paginado, pokemonPorPagina, todosPokemons }) {
 
   return (
     <nav>
-      <ul className={style.paginado}>
+      <ul className="pagina">
         {numPaginas.map((number) => {
           return (
             <li className={style.numero} key="num">

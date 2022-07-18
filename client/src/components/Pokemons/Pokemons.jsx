@@ -1,13 +1,14 @@
-import React from "react";
-import CardPokemon from "../CardPokemon/CardPokemon.jsx";
-import style from "../Style/CardPokemon.module.css";
-import Paginado from "../Paginado/Paginado.jsx"
+import React from 'react';
+import CardPokemon from '../CardPokemon/CardPokemon.jsx';
+import style from '../Style/CardPokemon.module.css';
+import Paginado from '../Paginado/Paginado.jsx';
 import Navbar from "../Navbar/Navbar.jsx";
-//import SearchBar from '../SearchBar/SearchBar.jsx';
-//<SearchBar className="search"/>
+import SearchBar from '../SearchBar/SearchBar.jsx';
+// <SearchBar className="search"/>
 import { useEffect ,useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import  getPokemons from '../../store/actions/index';
+//import { buscarPokemon } from "../../store/actions/index"
 import { Link } from "react-router-dom";
 import {filtrarPokemonAtaque,filtroCrear,filtrarPokemonTipo,Sort} from '../../store/actions/index'
 
@@ -31,8 +32,8 @@ function Pokemons(){
 
 
 
-    const paginado = (pageNumber) => {
-        setCurrentPage(pageNumber);
+    const paginado = (numPaginas) => {
+        setCurrentPage(numPaginas);
       };
     
       useEffect(() => {
@@ -55,10 +56,42 @@ function Pokemons(){
         dispatch(Sort(e.target.value));
       }
     
+//Prueba beta buscar Pokemon
+
+   
+    /*  const dispatch = useDispatch();
+    const [name, setName] = useState("")
+    const handleInputchange = (e) =>{ e.prevenDefault();
+      setName(e.target.value);
+
+  }
+  const handleSubmit = (e) => { e.prevenDefault();
+      dispatch(buscarPokemon(name))
+  }
+  <div>
+  <input className="Buscar" tipe="text" onChange ={(e) => handleInputchange(e)} placeholder="Busca tu pokemon..."></input>
+  <button className="boton" tipe ="submit" onClick={(e)=> handleSubmit(e)}>Buscar</button>
+</div>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 return (
     <>
       <Navbar />
-     
+      
+      <SearchBar className="search"/>
       <div className="home">
         <div>
           <select name={style.select} onChange={onSelectsChange} className="a-z">
@@ -94,8 +127,8 @@ return (
             <option value="Existentes"> Existentes </option>
           </select>
           <Paginado
-            pokemonsPerPage={pokemonPorPagina}
-            allPokemons={todosPokemons.length}
+            pokemonPorPagina={pokemonPorPagina}
+            todosPokemons={todosPokemons.length}
             paginado={paginado}
           />
           {pokemonsAct?.map((e) => {
