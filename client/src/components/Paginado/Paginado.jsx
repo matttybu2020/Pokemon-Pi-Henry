@@ -1,4 +1,4 @@
-
+import "../Paginado/Paginado.css"
 //import style from "../Style/Paginado.module.css";
 
 function Paginado({ paginado, pokemonPorPagina, todosPokemons }) {
@@ -13,7 +13,7 @@ function Paginado({ paginado, pokemonPorPagina, todosPokemons }) {
         {numPaginas.map((number) => {
           return (
             <li className="numero" key="num">
-              <button className="boton" onClick={() => paginado(number)}>
+              <button className="boton1" onClick={() => paginado(number)}>
                 {number}
               </button>
             </li>

@@ -6,7 +6,7 @@ const axios = require("axios")
 const { Pokemon, Type } = require("../db");
 
 
-// Devuelvo Pokemon por "name"
+//! Devuelvo Pokemon por "name"
 
 router.get("/" , async(req,res, next) => {
 
@@ -38,8 +38,8 @@ router.get("/" , async(req,res, next) => {
     }
 })
 
-// busqueda por "id"
 
+//! busqueda por "id"
 
 router.get("/:id", async (req,res,next)=> {
 
@@ -48,7 +48,7 @@ router.get("/:id", async (req,res,next)=> {
         const pokemonsTotal = await getAllPokemon();
         const errorBusquedaId ="No se encontro el Pokemon que tenga este Id";
         
-        // si em pasan el id correspondiente lo devuelvo , si no un error
+        // si le pasan el id correspondiente lo devuelvo , si no un error
         if(id){
             let idPokemon = pokemonsTotal.filter((el) => el.id == id)
             idPokemon.length
@@ -69,7 +69,7 @@ router.get("/:id", async (req,res,next)=> {
     }
 });
 
-// Creacion de "pokemon"
+//! Creacion de "pokemon" 
 
 
 router.post("/", async (req, res, next) => {
@@ -118,43 +118,6 @@ router.post("/", async (req, res, next) => {
 
 
 
-
-
-
-
-
-
-/*
-router.post ("/", async (req,res,next)=> {
-
-try{
-    let { name , image , hp , attack , defense , speed , height , weight , type } = req.body; 
-
-    const pokemonCreado = await Pokemon.create ({ name , image , hp , attack , defense , speed , height , weight});
-
-    //console.log(pokemonCreado);
-    //const datoOblig=({Infomacion : "El nombre es Obligatorio Por favor"});
-    //const pokemonCreadoExito = "Ah terminado de crear su nuevo Pokemon";
-    if (!name) return res.json({Infomacion : "El nombre es Obligatorio Por favor"});
-//consulto si loque tengo en type es un arreglo y verifico si tine algo adentro
-    if (Array.isArray(type) && type.length){
-        
-//creo una varible (promesa) realizo un map para poder verificar qeu cada elem existe en nuestra de tabla(tipos)        
-        let agregaType = await Promise.all (
-            type.map((e) => {
-                return Type.findOne({where:{ name:e}})
-            })
-        )
-        await pokemonCreado.setTypes(agregaType)
-        return res.send("Ah terminado de crear su nuevo Pokemon");
-    }
-} catch (err){
-    const errorData = "Tiene un error en data";
-    res.status(400).send(errorData);
-}
-});
-
-*/
 
 
 

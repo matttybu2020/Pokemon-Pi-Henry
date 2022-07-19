@@ -2,7 +2,7 @@ const axios = require ("axios");
 const { Pokemon , Type } = require ("../db");
 
 
-// realizamos un get a los datos de la Api
+//! realizamos un get a los datos de la Api
 
 const getApiInformacion = async () => {
     //modificar valor numerico
@@ -29,7 +29,8 @@ let pokeArray = respuesta.map((result) => {
     return pokeArray;
   };
 
-//realizamos un get a los datos de la base de datos
+
+//!realizamos un get a los datos de la base de datos
 
 const getBasedeDatos = async () => {
      //me traigo todo de la tabla pokemon && relacion con type
@@ -48,7 +49,8 @@ const getBasedeDatos = async () => {
     }
 }
 
-//realizamos la info total
+
+//! realizamos la info total
 
 const getAllPokemon = async () => {
     
@@ -57,8 +59,6 @@ const getAllPokemon = async () => {
     const informacionTotal = apiInformacion.concat(dbInformacion);
     return informacionTotal;
 }
-
-
 
 
 module.exports = getAllPokemon;

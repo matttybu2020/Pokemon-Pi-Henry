@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 export function postPokemon(payload) {
   return async function () {
     const response = await axios.post(
@@ -9,6 +11,7 @@ export function postPokemon(payload) {
     return response;
   };
 }
+
 
 export function buscarPokemon(name) {
   return async function (dispatch) {
@@ -28,6 +31,7 @@ export function buscarPokemon(name) {
   };
 }
 
+
 export function filtrarPokemonTipo(payload) {
   return {
     type: "FILTER_BY_TYPE",
@@ -35,12 +39,14 @@ export function filtrarPokemonTipo(payload) {
   };
 }
 
+
 export function Sort(order) {
   return {
     type: "SORT",
     paylaod: order,
   };
 }
+
 
 export function filtroCrear(payload) {
 
@@ -50,12 +56,14 @@ export function filtroCrear(payload) {
   };
 }
 
+
 export function filtrarPokemonAtaque(payload) {
   return {
     type: "FILTER_BY_ATTACK",
     payload,
   };
 }
+
 
 export default function getPokemons() {
   return async function (dispatch) {
@@ -81,6 +89,7 @@ export function getDetail(id) {
     }
   };
 }
+
 
 export function getType() {
   return async function (dispatch) {

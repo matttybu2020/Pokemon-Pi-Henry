@@ -1,6 +1,6 @@
 
 import {filtrarPokemonAtaque,filtroCrear,filtrarPokemonTipo,Sort} from '../../store/actions/index'
-import style from '../Style/CardPokemon.module.css';
+//import '../PokemonsFiltro.css';
 import  getPokemons from '../../store/actions/index';
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -33,13 +33,13 @@ return(
     <>
     <div className="home">
         <div>
-          <select name={style.select} onChange={onSelectsChange} className="a-z">
+          <select name="select" onChange={onSelectsChange} className="a-z">
             <option value="Filtro"> A-Z:</option>
             <option value="ASCENDENTE">Ascendente</option>
             <option value="DESCENDENTE">Descendente</option>
           </select>
           <select
-            name={style.select}
+            name="select"
             onChange={handlefiltrarPokemonAtaque}
             className="attack"
           >
@@ -68,8 +68,6 @@ return(
           </div>
           </div>
           </>
-
-
 )
 }
 export default PokemonsFiltro;

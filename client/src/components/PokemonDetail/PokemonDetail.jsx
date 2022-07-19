@@ -15,7 +15,7 @@ function PokemonDetail(props) {
         const dispatch = useDispatch();
         useEffect(() => {
           dispatch(getDetail(props.match.params.id));
-        }, [dispatch]);
+        },[dispatch]);
       
         let details = useSelector((state) => state.detail);
       console.log(details)

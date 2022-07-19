@@ -10,20 +10,6 @@ import { BrowserRouter, Route , Switch} from "react-router-dom";
 
 import Pokemons from "./components/Pokemons/Pokemons";
 
-/*function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Navbar />
-          <Route path="/" component={<Landing />} />
-          <Route path="/home" element={<Home />}/>
-          <Route path="/create" element={<Form />}/>
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
-}*/
 
 function App() {
   return (

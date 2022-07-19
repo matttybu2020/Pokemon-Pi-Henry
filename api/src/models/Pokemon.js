@@ -62,6 +62,14 @@ let pokemon = sequelize.define('pokemon', {
     },
   
 })}
+/*
+},
+{
+  timestamps:false,
+}
+);
+};*/
+
 
 
   // defino el modelo
