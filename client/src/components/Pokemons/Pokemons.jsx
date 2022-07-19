@@ -1,17 +1,17 @@
 import React from 'react';
 import CardPokemon from '../CardPokemon/CardPokemon.jsx';
-import style from '../Style/CardPokemon.module.css';
+//import style from '../Style/CardPokemon.module.css';
 import Paginado from '../Paginado/Paginado.jsx';
 import Navbar from "../Navbar/Navbar.jsx";
 import SearchBar from '../SearchBar/SearchBar.jsx';
 // <SearchBar className="search"/>
-import { useEffect ,useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import  getPokemons from '../../store/actions/index';
+import { useState} from "react";
+import {  useSelector } from "react-redux";
+//import  getPokemons from '../../store/actions/index';
 //import { buscarPokemon } from "../../store/actions/index"
 import { Link } from "react-router-dom";
-import {filtrarPokemonAtaque,filtroCrear,filtrarPokemonTipo,Sort} from '../../store/actions/index'
-
+//import {filtrarPokemonAtaque,filtroCrear,filtrarPokemonTipo,Sort} from '../../store/actions/index'
+import PokemonsFiltro from '../PokemonsFiltro/PokemonsFiltro.jsx';
 
 
 
@@ -19,7 +19,7 @@ import {filtrarPokemonAtaque,filtroCrear,filtrarPokemonTipo,Sort} from '../../st
 
 function Pokemons(){
 
-    const dispatch = useDispatch();
+   
 
 
     const todosPokemons = useSelector((state) => state.pokemons)
@@ -30,12 +30,15 @@ function Pokemons(){
     const pokemonsAct = todosPokemons.slice(primPokemons , indUltPokemons);
     
 
-
+    
 
     const paginado = (numPaginas) => {
         setCurrentPage(numPaginas);
       };
     
+      /* const dispatch = useDispatch();
+      
+      
       useEffect(() => {
         dispatch(getPokemons());
       }, [dispatch]);
@@ -54,7 +57,7 @@ function Pokemons(){
     
       function onSelectsChange(e) {
         dispatch(Sort(e.target.value));
-      }
+      }*/
     
 //Prueba beta buscar Pokemon
 
@@ -92,7 +95,9 @@ return (
       <Navbar />
       
       <SearchBar className="search"/>
-      <div className="home">
+      <PokemonsFiltro className="filtro" />
+
+      {/*<div className="home">
         <div>
           <select name={style.select} onChange={onSelectsChange} className="a-z">
             <option value="Filtro"> A-Z:</option>
@@ -125,7 +130,8 @@ return (
             <option value="Todos"> Todos </option>
             <option value="Creados"> Creados </option>
             <option value="Existentes"> Existentes </option>
-          </select>
+          </select>*/}
+
           <Paginado
             pokemonPorPagina={pokemonPorPagina}
             todosPokemons={todosPokemons.length}
@@ -144,8 +150,9 @@ return (
                 </fragment>
               );
             })} 
-        </div>
-      </div>
+           
+        {/*</div>
+      </div>*/}
     </>
   );
 }

@@ -5,7 +5,7 @@ import { getDetail } from "../../store/actions";
 import { Link } from "react-router-dom";
 //import  ball  from '../Style/img/ball.png'
 //import  {style} from "../Style/PokemonDetail.css";
-
+import "../PokemonDetail/PokemonDetail.css"
 
 
 
@@ -58,7 +58,7 @@ function PokemonDetail(props) {
                         <h4>
                         <ul>
                           <li className="lista">
-                            Vida: {p.life} Ps -
+                            Vida: {p.life} Hp -
                             Fuerza: {p.attack} % -
                             Defensa: {p.defense} % -
                             Velocidad: {p.speed} % -

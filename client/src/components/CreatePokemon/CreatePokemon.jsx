@@ -35,7 +35,7 @@ const [pokemon , setpokemon] = useState ({
 
 useEffect(()=>{
   dispatch(getType());
-}, [dispatch]);
+}, []);
 
 function handleSelect(e){
   setpokemon({
@@ -168,7 +168,7 @@ function onSubmit(e){
         value={pokemon.weight}
         className="input"
       />{" "}
-    normal
+  
     
       {" "}
       <p className="types-s">

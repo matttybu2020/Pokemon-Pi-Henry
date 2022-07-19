@@ -1,0 +1,90 @@
+.imagen {
+    border-radius: 150px;
+    border-radius: 100px;
+   /* From https://css.glass */
+background: rgba(89, 141, 225, 0.38);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.4px);
+-webkit-backdrop-filter: blur(8.4px);
+border: 1px solid rgba(15, 79, 199, 0.33);
+
+}
+
+* {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+.names {
+font-family: 'Cinzel Decorative', cursive;
+font-size: 40px;
+margin-top: 20px;
+text-align: center;
+color: #111111;
+background: #6CBDCE;
+background: -moz-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+background: -webkit-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+background: linear-gradient(to right, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+color: #444444;
+background: #6CBDCE;
+background: -moz-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+background: -webkit-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+background: linear-gradient(to right, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+-webkit-box-shadow: -8px 7px 33px 19px #000000; 
+box-shadow: -8px 7px 33px 19px #000000;
+/* From https://css.glass */
+background: rgba(24, 71, 131, 0.21);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.3px);
+-webkit-backdrop-filter: blur(3.3px);
+border: 1px solid rgba(24, 71, 131, 0.33);
+}
+
+
+
+.id{
+   font-size: 30px;
+   color: rgb(46, 13, 87);
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.438)
+}
+
+.volver{
+    color: rgb(18, 16, 16);
+    background: #6CBDCE;
+    background: -moz-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+    background: -webkit-linear-gradient(left, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+    background: linear-gradient(to right, #6CBDCE 0%, #1C6EA4 50%, #50ADC5 100%);
+    display: inline-block;
+	padding:15px;
+    margin-top:0px;
+}
+.carta{
+    color: #fff
+    }
+
+.type1, .type2 {
+    font-family: "Merienda", cursive;
+    font-size: 45px;
+    margin-right: 30px;
+text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.657)
+
+}
+
+.lista{
+    font-size: 30px;
+    margin-top: 50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+letter-spacing: -1px;
+word-spacing: 2.2px;
+color: #000000;
+font-weight: 700;
+text-decoration: underline solid rgb(68, 68, 68);
+font-style: italic;
+font-variant: small-caps;
+text-transform: none;
+}
