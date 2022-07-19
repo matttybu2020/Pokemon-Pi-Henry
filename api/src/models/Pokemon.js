@@ -14,37 +14,37 @@ let pokemon = sequelize.define('pokemon', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true
+    //unique: true
   },
   image:{
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    //allowNull: false,
+    //unique: true
   },
   hp:{
     type:DataTypes.INTEGER,
-    allowNull: false,
+    //allowNull: false,
     validate:{
       min: 0
     }
   },
   attack:{
     type:DataTypes.INTEGER,
-    allowNull: false,
+    //allowNull: false,
     validate:{
       min: 0
     }
   },
   defense:{
     type:DataTypes.INTEGER,
-    allowNull: false,
+    //allowNull: false,
     validate:{
       min: 0
     }
   },
   speed:{
     type:DataTypes.INTEGER,
-    allowNull: false,
+    //allowNull: false,
     validate:{
       min: 0
     }
@@ -52,21 +52,17 @@ let pokemon = sequelize.define('pokemon', {
   },
   height:{
     type:DataTypes.INTEGER,
-    allowNull: false,
+    //allowNull: false,
     validate:{
       min: 0
     }},
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      //allowNull: false,
     },
   
-},{
-  timestamps:false,
-}
-);
-return pokemon;
-};
+})}
+
 
   // defino el modelo
 /*Pokemon con las siguientes propiedades:

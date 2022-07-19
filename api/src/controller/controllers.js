@@ -5,8 +5,9 @@ const { Pokemon , Type } = require ("../db");
 // realizamos un get a los datos de la Api
 
 const getApiInformacion = async () => {
+    //modificar valor numerico
 const respuesta = await axios
-.get("https://pokeapi.co/api/v2/pokemon?limit=40")
+.get("https://pokeapi.co/api/v2/pokemon?limit=50")
 .then((data)=> {return data.data.results;})
 .then((data) => {return Promise.all(data.map((res) => axios.get(res.url))); }) //entra a cada elemnto && hace get a url
 .then((data)=> {return data.map((res)=> res.data); //tengo los datos de cada pokemon en respuesta
@@ -16,7 +17,7 @@ let pokeArray = respuesta.map((result) => {
         id:result.id,
         name: result.name,
         types:result.types.map((t) => t.type.name),
-        image: result.sprites.front_default,
+        image: result.sprites.other["official-artwork"].front_default,
         life:result.stats[0].base_stat,
         attack: result.stats[1].base_stat,
         defense: result.stats[2].base_stat,
@@ -36,8 +37,8 @@ const getBasedeDatos = async () => {
         const resultadoPokeType = await Pokemon.findAll({      
             include:{
                 model: Type,
-                attribute: ['name'],
-                through:{attribute:[]},
+                attributes: ['name'],
+                through:{attributes:[],}
             }
         })
         return resultadoPokeType;
@@ -50,6 +51,7 @@ const getBasedeDatos = async () => {
 //realizamos la info total
 
 const getAllPokemon = async () => {
+    
     const apiInformacion = await getApiInformacion(); //  guardo datos de consulta Api
     const dbInformacion = await getBasedeDatos();// guardo datos de la consulta de Base de Datos
     const informacionTotal = apiInformacion.concat(dbInformacion);
