@@ -72,7 +72,7 @@ router.get("/:id", async (req,res,next)=> {
 //! Creacion de "pokemon" 
 
 
-router.post("/", async (req, res, next) => {
+router.post("/", async (req, res, next) => {    //Ruta de creacion del pokemon
     try {
       const {  name , image , hp , attack , defense , speed , height , weight ,type } =req.body;
         //
@@ -89,11 +89,24 @@ router.post("/", async (req, res, next) => {
   
       const tipeId = consultaTipos?.map((e) => e.dataValues.id);
       await newPokemon.addType(tipeId)
-      res.send(newPokemon);
+
+    return  res.json(newPokemon);
     } catch (error) {
       next(error);
     }
   });
+
+  
+
+
+
+
+
+
+
+
+
+
 
   module.exports = router;
 

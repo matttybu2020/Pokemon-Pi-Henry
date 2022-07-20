@@ -1,9 +1,9 @@
 const { Sequelize, Op } = require('sequelize');
 const modelPokemon = require('./models/Pokemon.js');
-const modelTipo = require('./models/Type.js');
+const modelType = require('./models/Type.js');
 
 modelPokemon(db);
-modelTipo(db);
+modelType(db);
 
 
 const {Pokemon, Type} = db.models;

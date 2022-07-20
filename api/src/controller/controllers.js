@@ -7,7 +7,7 @@ const { Pokemon , Type } = require ("../db");
 const getApiInformacion = async () => {
     //modificar valor numerico
 const respuesta = await axios
-.get("https://pokeapi.co/api/v2/pokemon?limit=50")
+.get("https://pokeapi.co/api/v2/pokemon?limit=40")
 .then((data)=> {return data.data.results;})
 .then((data) => {return Promise.all(data.map((res) => axios.get(res.url))); }) //entra a cada elemnto && hace get a url
 .then((data)=> {return data.map((res)=> res.data); //tengo los datos de cada pokemon en respuesta

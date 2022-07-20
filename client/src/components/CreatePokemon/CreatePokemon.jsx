@@ -6,30 +6,39 @@ import { useEffect, useState } from "react";
 import style from "../Style/CreatePokemon.module.css";
 import { getType, postPokemon } from "../../store/actions/index";
 
+
+//! validar parametros de ingreso "attack","heigh"
+
 function validar(pokemon) {
-  let error = {};
+  let errors = {};
   if (!pokemon.name) {
-    error.name = "Por favor ingrese un nombre";
+    errors.name = "Por favor ingrese un nombre";
   }
-  return error;
+  if (!pokemon.life > 255 ) {
+    errors.life = 'Valor de vida Superado';
 }
+  return errors;
+}
+
+//!Funtion crear Pokemon
 
 function CreatePokemon() {
   const dispatch = useDispatch();
   const history = useHistory();
   const types = useSelector((state) => state.types);
 
-  const [error, setErrors] = useState({});
-  const [pokemon, setpokemon] = useState({
+  const [errors, setErrors] = useState({});
+
+  const [pokemon, setPokemon] = useState({
     name: "",
-    types: [],
     image: "",
-    life: 0,
+    hp: 0,
     attack: 0,
     defense: 0,
     speed: 0,
     height: 0,
     weight: 0,
+    type: [],
   });
 
   useEffect(() => {
@@ -37,7 +46,7 @@ function CreatePokemon() {
   }, []);
 
   function handleSelect(e) {
-    setpokemon({
+    setPokemon({
       ...pokemon,
       type: [...pokemon.type, e.target.value],
     });
@@ -47,7 +56,7 @@ function CreatePokemon() {
 
   function onInputChange(e) {
     e.preventDefault();
-    setpokemon({
+    setPokemon({
       ...pokemon,
       [e.target.name]: e.target.value,
     });
@@ -62,17 +71,17 @@ function CreatePokemon() {
   function onSubmit(e) {
     e.preventDefault();
     dispatch(postPokemon(pokemon));
-    alert("Personaje creado con exito");
-    setpokemon({
+    alert("Personaje creado correctamente");
+    setPokemon({
       name: "",
-      types: [],
       image: "",
-      life: 0,
+      hp: 0,
       attack: 0,
       defense: 0,
       speed: 0,
       height: 0,
       weight: 0,
+      type:[],
     });
     history.push("/Pokemons");
   }
@@ -80,7 +89,8 @@ function CreatePokemon() {
   return (
     <form className={style.form} onSubmit={onSubmit}>
       <h3 className={style.title}> Crea Tu Pokemon !!!</h3>
-      <label for={style.name}> Nombre: </label>
+
+      <label for="name"> Nombre: </label>
       <input
         onChange={onInputChange}
         id="name"
@@ -90,7 +100,8 @@ function CreatePokemon() {
         required
         className="input"
       />{" "}
-      {error.name && <p className="error"> {error.name}</p>}
+      {errors.name && <p className="error"> {errors.name}</p>}
+
       <label htmlFor="">Imagen: </label>
       <input
         onChange={onInputChange}
@@ -99,14 +110,16 @@ function CreatePokemon() {
         value={pokemon.image}
         className="input"
       />{" "}
+
       <label htmlFor="">Vida: </label>
       <input
         onChange={onInputChange}
-        name="life"
+        name="hp"
         type="number"
-        value={pokemon.life}
+        value={pokemon.hp}
         className="input"
       />{" "}
+
       <label htmlFor="">Fuerza: </label>
       <input
         onChange={onInputChange}
@@ -115,6 +128,7 @@ function CreatePokemon() {
         value={pokemon.attack}
         className="input"
       />{" "}
+
       <label htmlFor="">Defensa: </label>
       <input
         onChange={onInputChange}
@@ -123,6 +137,7 @@ function CreatePokemon() {
         value={pokemon.defense}
         className="input"
       />{" "}
+
       <label htmlFor="">Velocidad: </label>
       <input
         onChange={onInputChange}
@@ -131,7 +146,8 @@ function CreatePokemon() {
         value={pokemon.speed}
         className="input"
       />{" "}
-      <label htmlFor="">Altura: </label>
+
+            <label htmlFor="">Altura: </label>
       <input
         onChange={onInputChange}
         name="height"
@@ -139,6 +155,7 @@ function CreatePokemon() {
         value={pokemon.height}
         className="input"
       />{" "}
+
       <label htmlFor="">Peso: </label>
       <input
         onChange={onInputChange}
@@ -147,23 +164,25 @@ function CreatePokemon() {
         value={pokemon.weight}
         className="input"
       />{" "}
+
       <p className="types-s">
         <select onChange={handleSelect}>
           {types.map((e) => (
             <option value={e.name}>{e.name}</option> //filtramos los tipos que vienen por get
           ))}{" "}
+
         </select>
         <ul>
-          <li>{pokemon.types.map((e) => e + " , ")}</li>
+          <li>{pokemon.type.map((e) => e + " , ")}</li>
         </ul>
       </p>
       <Link to="/Pokemons">
         <button type="submit" className={style.atras}>
-          Atrás
+          Volver
         </button>
       </Link>
       <button type="submit" className={style.bottom}>
-        Crear
+        Crear !!
       </button>
     </form>
   );

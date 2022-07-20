@@ -25,10 +25,9 @@ function Pokemons(){
   return (
     <>
       <Navbar />
-      
       <SearchBar className="search"/>
-      <PokemonsFiltro className="filtro" />
-          <Paginado
+      <PokemonsFiltro className="filtro"/>
+      <Paginado
             pokemonPorPagina={pokemonPorPagina}
             todosPokemons={todosPokemons.length}
             paginado={paginado}

@@ -49,10 +49,9 @@ export function Sort(order) {
 
 
 export function filtroCrear(payload) {
-
   return {
-    tpe: "FILTER_CREATED",
-    payload,
+    type: "FILTER_CREATED",
+    payload
   };
 }
 
